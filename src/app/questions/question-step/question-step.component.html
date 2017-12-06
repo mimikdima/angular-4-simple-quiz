@@ -1,0 +1,14 @@
+<div *ngIf="active">
+  <div class="container"  >
+    <h4 class="question">{{ question }}</h4>
+    <div *ngFor="let answer of answers;let i=index">
+      <div class="form-group">
+        <div class="col-lg-6">
+          <label class="btn btn-primary">
+            <input type="radio" name="options{{index+1}}" (click)="onAnswer(answer.idAnswer)" [checked]="i+1 === checked"  value="{{answer.idAnswer}}">     {{ answer.option }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
